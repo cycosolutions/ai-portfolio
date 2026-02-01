@@ -171,7 +171,7 @@ function appData() {
                 title: 'Challenge Accepted: Google AI New Year, New You',
                 date: 'Jan 24, 2026',
                 summary: 'The spark that started this Cyber-Cottage overhaul.',
-                content: 'I stumbled upon an article on dev.to about the "New Year, New You" portfolio challenge by the Google AI team. It was the perfect motivation to finally revamp my portfolio. I decided to blend my love for Cyberpunk aesthetics with Cottagecore elements, creating a unique "Neural Garden" interface. Check out the challenge here: <a href="https://dev.to/devteam/join-the-new-year-new-you-portfolio-challenge-3000-in-prizes-feedback-from-google-ai-team-4e7g" target="_blank" class="text-[var(--neon-mint)] underline">Join the Challenge</a>.'
+                content: 'I stumbled upon an article on dev.to about the "New Year, New You" portfolio challenge by the Google AI team. It was the perfect motivation to finally revamp my portfolio. I decided to blend my love for Cyberpunk aesthetics with Cottagecore elements, creating a unique "Neural Garden" interface. Check out my submission here: <a href="https://dev.to/charlenecordero/cyber-cottage-portfolio-my-ai-automation-journey-6j" target="_blank" class="text-[var(--neon-mint)] underline">My portfolio submission</a>.'
             },
             {
                 id: 1,
