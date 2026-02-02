@@ -363,11 +363,12 @@ function appData() {
             if (ctx) {
                 if (this.careerChartInstance) this.careerChartInstance.destroy();
 
-                const mint = '#4AF2A1';
-                const pink = '#FF2E88';
-                const text = '#E0E5D7';
-                const axisText = '#8A9A90';
-                const gridColor = 'rgba(74, 242, 161, 0.1)';
+                const mint = this.getThemeColor('--neon-mint');
+                const pink = this.getThemeColor('--neon-pink');
+                const text = this.getThemeColor('--txt-bone');
+                const axisText = this.getThemeColor('--txt-muted');
+                const gridColor = this.getThemeColor('--glass-shine') || 'rgba(74, 242, 161, 0.1)';
+                const bgFill = this.getThemeColor('--glass-shine');
 
 
                 this.careerChartInstance = new Chart(ctx, {
@@ -378,7 +379,7 @@ function appData() {
                             label: 'Career Trajectory',
                             data: [1, 2, 2.5, 3, 3.5, 4, 5],
                             borderColor: mint,
-                            backgroundColor: 'rgba(74, 242, 161, 0.1)',
+                            backgroundColor: bgFill,
                             tension: 0.4,
                             pointBackgroundColor: pink,
                             pointBorderColor: mint,
@@ -407,7 +408,7 @@ function appData() {
                                         return roles[context.dataIndex];
                                     }
                                 },
-                                backgroundColor: 'rgba(5, 5, 5, 0.9)',
+                                backgroundColor: this.isLightMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(5, 5, 5, 0.9)',
                                 titleColor: mint,
                                 bodyColor: '#E0E5D7',
                                 borderColor: mint,
@@ -448,10 +449,10 @@ function appData() {
                         scales: {
                             y: {
                                 display: false,
-                                grid: { color: this.getThemeColor('--glass-border') || 'rgba(74, 242, 161, 0.1)' }
+                                grid: { color: gridColor }
                             },
                             x: {
-                                grid: { color: this.getThemeColor('--glass-border') || 'rgba(74, 242, 161, 0.1)' },
+                                grid: { color: gridColor },
                                 ticks: {
                                     color: text,
                                     font: { family: 'Fira Code', size: 10 }
@@ -467,11 +468,16 @@ function appData() {
             if (ctx) {
                 if (this.stackChartInstance) this.stackChartInstance.destroy();
 
-                if (this.stackChartInstance) this.stackChartInstance.destroy();
+                const mint = this.getThemeColor('--neon-mint');
+                const pink = this.getThemeColor('--neon-pink');
+                const text = this.getThemeColor('--txt-bone');
 
-                const mint = '#4AF2A1';
-                const pink = '#FF2E88'; // Keep pink consistent
-                const text = this.isLightMode ? '#000000' : '#E0E5D7';
+                let palette;
+                if (this.isLightMode) {
+                    palette = [mint, '#9D174D', '#FBCFE8', pink, '#6EE7B7'];
+                } else {
+                    palette = [mint, '#008B8B', '#E0F7FA', pink, '#FF66B2'];
+                }
 
                 this.stackChartInstance = new Chart(ctx, {
                     type: 'doughnut',
@@ -479,13 +485,7 @@ function appData() {
                         labels: ['AUTOMATION', 'RAG SYSTEMS', 'LLM AGENTS', 'PYTHON / APIS', 'DATA OPS'],
                         datasets: [{
                             data: [30, 25, 20, 15, 10],
-                            backgroundColor: [
-                                mint, // System Design
-                                '#2D5A45', // AI/LLM Ops (Keep static or var?)
-                                '#98F5C6', // Automation (Pale Mint)
-                                pink, // AI Strategy
-                                '#FF85B3'  // Governance (Soft Pink)
-                            ],
+                            backgroundColor: palette,
                             borderColor: 'transparent',
                             borderWidth: 2,
                             hoverOffset: 4
@@ -502,7 +502,7 @@ function appData() {
                                 display: false
                             },
                             tooltip: {
-                                backgroundColor: 'rgba(5, 5, 5, 0.9)',
+                                backgroundColor: this.isLightMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(5, 5, 5, 0.9)',
                                 titleColor: mint,
                                 bodyColor: '#E0E5D7',
                                 borderColor: mint,
