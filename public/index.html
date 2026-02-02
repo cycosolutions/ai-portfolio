@@ -1010,7 +1010,7 @@
                         </div>
 
                         <!-- Center: Description (Visible on Desktop) -->
-                        <div class="hidden md:block flex-grow px-4 border-l border-[#2d5a45] mx-4">
+                        <div class="hidden md:block flex-grow px-4 border-l border-[var(--glass-border)] mx-4">
                             <p class="text-xs text-[var(--txt-muted)] font-tech truncate" x-text="project.desc"></p>
                         </div>
 
@@ -1018,7 +1018,7 @@
                         <div class="flex flex-wrap gap-2 justify-end min-w-[150px]">
                             <template x-for="tag in project.tags" :key="tag">
                                 <span
-                                    class="text-[9px] uppercase border border-[#2d5a45] text-[var(--neon-mint)] px-1.5 py-0.5 rounded-sm font-tech whitespace-nowrap"
+                                    class="text-[9px] uppercase border border-[var(--glass-border)] text-[var(--neon-mint)] px-1.5 py-0.5 rounded-sm font-tech whitespace-nowrap"
                                     x-text="tag"></span>
                             </template>
                         </div>
@@ -1052,7 +1052,7 @@
             <div class="space-y-3">
                 <template x-for="job in experience" :key="job.company + job.years">
                     <div
-                        class="glass-panel p-3 border-organic border border-[#2d5a45] hover:border-[#FF2E88]/60 transition-all group relative overflow-hidden hover:bg-[#050505]/60">
+                        class="glass-panel p-3 border-organic border border-[var(--glass-border)] hover:border-[#FF2E88]/60 transition-all group relative overflow-hidden hover:bg-[#050505]/60">
                         <!-- Neon Vines (Low Opacity) -->
                         <svg class="holo-vine absolute top-0 left-0 w-full h-full opacity-30" viewBox="0 0 400 400"
                             preserveAspectRatio="none">
@@ -1063,7 +1063,7 @@
 
                         <!-- Header Line: Role | Company | Year | Skills -->
                         <div
-                            class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-[#2d5a45]/50 pb-2 mb-2">
+                            class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-[var(--glass-border)]/50 pb-2 mb-2">
                             <!-- Left: Job Info -->
                             <div class="flex items-center gap-2 flex-wrap flex-grow">
                                 <h3 class="font-tech font-bold text-[var(--neon-mint)] text-xs md:text-sm tracking-wide"
@@ -1128,7 +1128,7 @@
                 <!-- Blog List (Transmission Log Style) -->
                 <template x-for="blog in blogs" :key="blog.id">
                     <div @click="selectedBlog = blog"
-                        class="glass-panel p-4 border border-[#2d5a45] hover:border-[#FF2E88] hover:bg-[#FF2E88]/5 cursor-pointer group transition-all relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-6">
+                        class="glass-panel p-4 border border-[var(--glass-border)] hover:border-[#FF2E88] hover:bg-[#FF2E88]/5 cursor-pointer group transition-all relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-6">
                         <!-- Neon Vines (Low Opacity) -->
                         <svg class="holo-vine absolute top-0 left-0 w-full h-full opacity-30" viewBox="0 0 400 400"
                             preserveAspectRatio="none">
@@ -1142,7 +1142,7 @@
                         <div class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4 w-full">
                             <span class="font-tech text-xs text-[var(--neon-mint)] min-w-[80px]"
                                 x-text="blog.date"></span>
-                            <div class="h-4 w-px bg-[#2d5a45] hidden md:block"></div>
+                            <div class="h-4 w-px bg-[var(--glass-border)] hidden md:block"></div>
                             <div class="w-full min-w-0">
                                 <h3 class="font-tech text-sm md:text-base group-hover:text-[var(--neon-pink)] transition-colors tracking-wide break-words"
                                     :class="isLightMode ? 'text-[var(--neon-mint)]' : 'text-[#FFEAF5]'"
@@ -1269,7 +1269,7 @@
                                         class="block text-[#FF2E88] text-[10px] font-tech mb-1 tracking-widest drop-shadow-[0_0_5px_rgba(255,46,136,0.8)]">FROM
                                         (EMAIL) ::</label>
                                     <input type="email" x-model="fromEmail" required
-                                        class="bg-[var(--void-moss)] border-[var(--hologram-fern)] text-[var(--txt-bone)] w-full font-tech p-2 rounded-sm focus:border-[var(--neon-mint)] outline-none transition-all placeholder-[var(--txt-muted)]/30 text-xs chat-input"
+                                        class="bg-[var(--void-moss)] border-[var(--glass-border)] text-[var(--txt-bone)] w-full font-tech p-2 rounded-sm focus:border-[var(--neon-mint)] outline-none transition-all placeholder-[var(--txt-muted)]/30 text-xs chat-input"
                                         placeholder="your.email@example.com">
                                 </div>
 
@@ -1278,7 +1278,7 @@
                                         class="block text-[#FF2E88] text-[10px] font-tech mb-1 tracking-widest drop-shadow-[0_0_5px_rgba(255,46,136,0.8)]">SUBJECT
                                         ::</label>
                                     <input type="text" x-model="subject" required
-                                        class="bg-[var(--void-moss)] border-[var(--hologram-fern)] text-[var(--txt-bone)] w-full font-tech p-2 rounded-sm focus:border-[var(--neon-mint)] outline-none transition-all placeholder-[var(--txt-muted)]/30 text-xs chat-input"
+                                        class="bg-[var(--void-moss)] border-[var(--glass-border)] text-[var(--txt-bone)] w-full font-tech p-2 rounded-sm focus:border-[var(--neon-mint)] outline-none transition-all placeholder-[var(--txt-muted)]/30 text-xs chat-input"
                                         placeholder="Project / Inquiry / Hello">
                                 </div>
                                 <div>
@@ -1286,7 +1286,7 @@
                                         class="block text-[#FF2E88] text-[10px] font-tech mb-1 tracking-widest drop-shadow-[0_0_5px_rgba(255,46,136,0.8)]">MESSAGE
                                         ::</label>
                                     <textarea x-model="message" rows="3" required
-                                        class="bg-[var(--void-moss)] border-[var(--hologram-fern)] text-[var(--txt-bone)] w-full font-tech p-2 rounded-sm focus:border-[var(--neon-mint)] outline-none transition-all placeholder-[var(--txt-muted)]/30 custom-scrollbar text-xs chat-input"
+                                        class="bg-[var(--void-moss)] border-[var(--glass-border)] text-[var(--txt-bone)] w-full font-tech p-2 rounded-sm focus:border-[var(--neon-mint)] outline-none transition-all placeholder-[var(--txt-muted)]/30 custom-scrollbar text-xs chat-input"
                                         placeholder="Enter your message sequence here..."></textarea>
                                 </div>
 
@@ -1309,7 +1309,7 @@
 
                             <!-- Social Links (Relocated Below Form) -->
                             <div
-                                class="mt-4 pt-2 border-t border-[#2d5a45] flex flex-col items-center justify-center gap-3 w-full">
+                                class="mt-4 pt-2 border-t border-[var(--glass-border)] flex flex-col items-center justify-center gap-3 w-full">
                                 <label
                                     class="text-[#FF2E88] text-[10px] font-tech tracking-widest uppercase drop-shadow-[0_0_5px_rgba(255,46,136,0.8)]">
                                     Social Frequency ::
@@ -1366,7 +1366,8 @@
     <!-- Chat Widget moved to end of body -->
 
     <!-- Footer -->
-    <footer class="py-4 border-t border-[#2d5a45] text-center bg-[var(--void-moss)] z-50 relative overflow-hidden">
+    <footer
+        class="py-4 border-t border-[var(--glass-border)] text-center bg-[var(--void-moss)] z-50 relative overflow-hidden">
         <!-- Scanline overlay specific to footer -->
         <div class="absolute inset-0 bg-[#4AF2A1]/5 pointer-events-none"></div>
 
